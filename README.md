@@ -46,6 +46,8 @@ In Xcode click on the project in the left-hand navigation pane, then on your app
 
 Click on the **+ Capability** button and select **Keychain Sharing**.  This will add a new section to this tab.  Click on the **+** button and add keychain sharing for your project's application bundle identifier as well as the `com.citrix.mdx` group. 
 
+This will add an "<project>.entitlements" file to your project.
+
 ### Verify that Everything Builds
 
 This is a good time to ensure that all of the changes you've just made do not disrupt your existing app.

@@ -3,10 +3,24 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DE3D89D2268C0336007E6192 /* CitrixLogger.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE3D89BC268BFCB5007E6192 /* CitrixLogger.xcframework */; };
+		DE3D89D3268C0336007E6192 /* CitrixLogger.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DE3D89BC268BFCB5007E6192 /* CitrixLogger.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		DE3D89D4268C0336007E6192 /* CTXMAMAppCore.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE3D89BF268BFCB5007E6192 /* CTXMAMAppCore.xcframework */; };
+		DE3D89D5268C0336007E6192 /* CTXMAMAppCore.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DE3D89BF268BFCB5007E6192 /* CTXMAMAppCore.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		DE3D89D6268C0336007E6192 /* CTXMAMCompliance.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE3D89BD268BFCB5007E6192 /* CTXMAMCompliance.xcframework */; };
+		DE3D89D7268C0336007E6192 /* CTXMAMCompliance.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DE3D89BD268BFCB5007E6192 /* CTXMAMCompliance.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		DE3D89D8268C0336007E6192 /* CTXMAMContainment.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE3D89BB268BFCB5007E6192 /* CTXMAMContainment.xcframework */; };
+		DE3D89D9268C0336007E6192 /* CTXMAMContainment.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DE3D89BB268BFCB5007E6192 /* CTXMAMContainment.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		DE3D89DA268C0336007E6192 /* CTXMAMCore.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE3D89C0268BFCB5007E6192 /* CTXMAMCore.xcframework */; };
+		DE3D89DB268C0336007E6192 /* CTXMAMCore.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DE3D89C0268BFCB5007E6192 /* CTXMAMCore.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		DE3D89DC268C0336007E6192 /* CTXMAMLocalAuth.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE3D89C1268BFCB5007E6192 /* CTXMAMLocalAuth.xcframework */; };
+		DE3D89DD268C0336007E6192 /* CTXMAMLocalAuth.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DE3D89C1268BFCB5007E6192 /* CTXMAMLocalAuth.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		DE3D89DE268C0336007E6192 /* CTXMAMNetwork.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE3D89BE268BFCB5007E6192 /* CTXMAMNetwork.xcframework */; };
+		DE3D89DF268C0336007E6192 /* CTXMAMNetwork.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DE3D89BE268BFCB5007E6192 /* CTXMAMNetwork.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DE633D49268BD3A4004225B7 /* BlackMarble_2016_rotating_globe_at_night_transparent.gif in Resources */ = {isa = PBXBuildFile; fileRef = DE633D48268BD3A4004225B7 /* BlackMarble_2016_rotating_globe_at_night_transparent.gif */; };
 		DE633D4C268BD5E0004225B7 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE633D4B268BD5E0004225B7 /* WebKit.framework */; };
 		DE633D4E268BD693004225B7 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = DE633D4D268BD693004225B7 /* README.md */; };
@@ -38,7 +52,35 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		DE3D89E0268C0337007E6192 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				DE3D89D7268C0336007E6192 /* CTXMAMCompliance.xcframework in Embed Frameworks */,
+				DE3D89DF268C0336007E6192 /* CTXMAMNetwork.xcframework in Embed Frameworks */,
+				DE3D89DD268C0336007E6192 /* CTXMAMLocalAuth.xcframework in Embed Frameworks */,
+				DE3D89DB268C0336007E6192 /* CTXMAMCore.xcframework in Embed Frameworks */,
+				DE3D89D5268C0336007E6192 /* CTXMAMAppCore.xcframework in Embed Frameworks */,
+				DE3D89D9268C0336007E6192 /* CTXMAMContainment.xcframework in Embed Frameworks */,
+				DE3D89D3268C0336007E6192 /* CitrixLogger.xcframework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		DE3D89BB268BFCB5007E6192 /* CTXMAMContainment.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = CTXMAMContainment.xcframework; path = Frameworks/CTXMAMContainment.xcframework; sourceTree = "<group>"; };
+		DE3D89BC268BFCB5007E6192 /* CitrixLogger.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = CitrixLogger.xcframework; path = Frameworks/CitrixLogger.xcframework; sourceTree = "<group>"; };
+		DE3D89BD268BFCB5007E6192 /* CTXMAMCompliance.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = CTXMAMCompliance.xcframework; path = Frameworks/CTXMAMCompliance.xcframework; sourceTree = "<group>"; };
+		DE3D89BE268BFCB5007E6192 /* CTXMAMNetwork.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = CTXMAMNetwork.xcframework; path = Frameworks/CTXMAMNetwork.xcframework; sourceTree = "<group>"; };
+		DE3D89BF268BFCB5007E6192 /* CTXMAMAppCore.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = CTXMAMAppCore.xcframework; path = Frameworks/CTXMAMAppCore.xcframework; sourceTree = "<group>"; };
+		DE3D89C0268BFCB5007E6192 /* CTXMAMCore.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = CTXMAMCore.xcframework; path = Frameworks/CTXMAMCore.xcframework; sourceTree = "<group>"; };
+		DE3D89C1268BFCB5007E6192 /* CTXMAMLocalAuth.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = CTXMAMLocalAuth.xcframework; path = Frameworks/CTXMAMLocalAuth.xcframework; sourceTree = "<group>"; };
+		DE3D89D1268C0153007E6192 /* ios-simple-app.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "ios-simple-app.entitlements"; sourceTree = "<group>"; };
 		DE633D48268BD3A4004225B7 /* BlackMarble_2016_rotating_globe_at_night_transparent.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = BlackMarble_2016_rotating_globe_at_night_transparent.gif; sourceTree = "<group>"; };
 		DE633D4B268BD5E0004225B7 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		DE633D4D268BD693004225B7 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -67,7 +109,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE3D89DA268C0336007E6192 /* CTXMAMCore.xcframework in Frameworks */,
+				DE3D89D6268C0336007E6192 /* CTXMAMCompliance.xcframework in Frameworks */,
+				DE3D89D4268C0336007E6192 /* CTXMAMAppCore.xcframework in Frameworks */,
+				DE3D89DC268C0336007E6192 /* CTXMAMLocalAuth.xcframework in Frameworks */,
+				DE3D89DE268C0336007E6192 /* CTXMAMNetwork.xcframework in Frameworks */,
+				DE3D89D2268C0336007E6192 /* CitrixLogger.xcframework in Frameworks */,
 				DE633D4C268BD5E0004225B7 /* WebKit.framework in Frameworks */,
+				DE3D89D8268C0336007E6192 /* CTXMAMContainment.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,6 +148,13 @@
 		DE633D4A268BD5E0004225B7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DE3D89BC268BFCB5007E6192 /* CitrixLogger.xcframework */,
+				DE3D89BF268BFCB5007E6192 /* CTXMAMAppCore.xcframework */,
+				DE3D89BD268BFCB5007E6192 /* CTXMAMCompliance.xcframework */,
+				DE3D89BB268BFCB5007E6192 /* CTXMAMContainment.xcframework */,
+				DE3D89C0268BFCB5007E6192 /* CTXMAMCore.xcframework */,
+				DE3D89C1268BFCB5007E6192 /* CTXMAMLocalAuth.xcframework */,
+				DE3D89BE268BFCB5007E6192 /* CTXMAMNetwork.xcframework */,
 				DE633D4B268BD5E0004225B7 /* WebKit.framework */,
 			);
 			name = Frameworks;
@@ -130,6 +186,7 @@
 		DEF898BC268BCC3C0040BB6F /* ios-simple-app */ = {
 			isa = PBXGroup;
 			children = (
+				DE3D89D1268C0153007E6192 /* ios-simple-app.entitlements */,
 				DEF898BD268BCC3C0040BB6F /* AppDelegate.h */,
 				DEF898BE268BCC3C0040BB6F /* AppDelegate.m */,
 				DEF898C0268BCC3C0040BB6F /* SceneDelegate.h */,
@@ -173,6 +230,7 @@
 				DEF898B6268BCC3C0040BB6F /* Sources */,
 				DEF898B7268BCC3C0040BB6F /* Frameworks */,
 				DEF898B8268BCC3C0040BB6F /* Resources */,
+				DE3D89E0268C0337007E6192 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -469,8 +527,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "ios-simple-app/ios-simple-app.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = LKQN7JYQXV;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "ios-simple-app/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -487,8 +547,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "ios-simple-app/ios-simple-app.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = LKQN7JYQXV;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "ios-simple-app/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
