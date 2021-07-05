@@ -86,32 +86,8 @@ In your app's `AppDelegate.m` modify it as follows:
     
     [CTXMAMCore initializeSDKsWithCompletionBlock:^(NSError * _Nullable nilOrError) {
         NSLog(@"Citrix MAM SDK has been initialized!");
-        [self showAlertMsg:@"Citrix MAM SDK has been initialized."];
     }];
     return YES;
-}
-
--(void)showAlertMsg:(NSString *)alertMsg
-{
-    dispatch_async(dispatch_get_main_queue(), ^{
-        NSArray<__kindof UIWindow *> *windows = [UIApplication sharedApplication].windows;
-        UIWindow * keyWindow = windows.lastObject;
-        UIViewController *topController = keyWindow.rootViewController;
-
-        UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Citrix Alert"
-                                                                       message:alertMsg
-                                                                preferredStyle:UIAlertControllerStyleAlert];
-        NSString *buttonText = nil;
-        buttonText = NSLocalizedString(@"OK", comment="");
-        
-        UIAlertAction* uiButton = [UIAlertAction actionWithTitle:buttonText
-                                                           style:UIAlertActionStyleDefault
-                                                         handler:^(UIAlertAction * action) {
-        }];
-         
-        [alert addAction:uiButton];
-        [topController presentViewController:alert animated:YES completion:nil];
-    });
 }
 ```
 
@@ -119,10 +95,50 @@ You'll then get a warning that `Class 'AppDelegate' does not conform to protocol
 
 It will add a number of functions to your App Delegate.  For now, just modify each one so that it returns YES.
 
+### Generate MDX file
 
+Click on your project at the top of your navigation window in the left-hand pane, then click on your app name under **Targets** in the middle pane, and select the **Build Phases** tab.
 
+Click on the small **+** sign to the right of the project and then select **New Run Script Phase**.
 
+Copy the following script into the editable text section:
 
+```bash
+#WARNING: Ensure that no hidden characters are added to the file in the process of copying contents. Some editors will add formatting data when copying from them.
 
+export STOREURL="http://yourstore.yourdomain.com" #STOREURL can be set to any URL during development (e.g., http://yourstore.yourdomain.com). The URL may need to be changed later depending on the distribution method selected.
 
+export APPTYPE="sdkapp" #APPTYPE should be set to sdkapp for apps that use the iOS MAM SDK, as this is the only valid option. Since the iOS MAM SDK is built into the app, XCode can prepare the app like any other Apple applications. Consequently less post-build preparation is needed than when performing an MDX app wrapping.
+
+export PACKAGEID="DE398570-6D5E-4DE8-BC13-BB1814BBB412" #Please run uuidgen on the terminal and paste the output value in PACKAGEID. This has be the same UUID which was generated when adding the URL Type.
+
+export APPIDPREFIX="LKQN7Jfake" #APPIDPREFIX should be set to the Team ID that is located in the Apple Developer Account.
+
+export TOOLKIT_DIR="$PROJECT_DIR/Tools"
+
+if [ -z "${PACKAGEID}" ]
+then
+    echo "PACKAGEID variable was not found or was empty, please run uuidgen at the command line and paste the output value in the PACKAGEID variable in your post build script."
+    exit 1
+fi
+
+if [ -z "${APPIDPREFIX}" ]
+then
+    echo "APPIDPREFIX variable was not found or was empty, please refer to the \"how to\" document located in the documentation folder of the SDK package on where to find your Apple's application prefix ID."
+    exit 1
+fi
+
+if [ ! -d $TOOLKIT_DIR/logs ]
+then
+    mkdir $TOOLKIT_DIR/logs
+fi
+
+"$TOOLKIT_DIR/CGAppCLPrepTool" SdkPrep -in "$CONFIGURATION_BUILD_DIR/$EXECUTABLE_FOLDER_PATH" -out "$CONFIGURATION_BUILD_DIR/$EXECUTABLE_NAME.mdx" -storeURL "${STOREURL}" -appType "${APPTYPE}" -packageId "${PACKAGEID}" -entitlements "$SRCROOT/$PROJECT/$PROJECT.entitlements" -appIdPrefix "${APPIDPREFIX}" -minPlatform "9.0"
+
+```
+### MDX File
+
+After you rebuild the project, you'll find the generated MDX file in your **DerivedData** folder, which if you followed the suggestion will be located at the root of your project directory.
+
+The path will be `DerivedData\<appName>\Build\Products\Debug-iphonesimulator\`.
 

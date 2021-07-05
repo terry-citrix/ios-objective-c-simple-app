@@ -231,6 +231,7 @@
 				DEF898B7268BCC3C0040BB6F /* Frameworks */,
 				DEF898B8268BCC3C0040BB6F /* Resources */,
 				DE3D89E0268C0337007E6192 /* Embed Frameworks */,
+				DE3D89E12693BB0C007E6192 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -346,6 +347,26 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		DE3D89E12693BB0C007E6192 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#WARNING: Ensure that no hidden characters are added to the file in the process of copying contents. Some editors will add formatting data when copying from them.\n\nexport STOREURL=\"http://yourstore.yourdomain.com\" #STOREURL can be set to any URL during development (e.g., http://yourstore.yourdomain.com). The URL may need to be changed later depending on the distribution method selected.\n\nexport APPTYPE=\"sdkapp\" #APPTYPE should be set to sdkapp for apps that use the iOS MAM SDK, as this is the only valid option. Since the iOS MAM SDK is built into the app, XCode can prepare the app like any other Apple applications. Consequently less post-build preparation is needed than when performing an MDX app wrapping.\n\nexport PACKAGEID=\"DE398570-6D5E-4DE8-BC13-BB1814BBB412\" #Please run uuidgen on the terminal and paste the output value in PACKAGEID. This has be the same UUID which was generated when adding the URL Type.\n\nexport APPIDPREFIX=\"LKQN7JYQXV\" #APPIDPREFIX should be set to the Team ID that is located in the Apple Developer Account.\n\nexport TOOLKIT_DIR=\"$PROJECT_DIR/Tools\"\n\nif [ -z \"${PACKAGEID}\" ]\nthen\n    echo \"PACKAGEID variable was not found or was empty, please run uuidgen at the command line and paste the output value in the PACKAGEID variable in your post build script.\"\n    exit 1\nfi\n\nif [ -z \"${APPIDPREFIX}\" ]\nthen\n    echo \"APPIDPREFIX variable was not found or was empty, please refer to the \\\"how to\\\" document located in the documentation folder of the SDK package on where to find your Apple's application prefix ID.\"\n    exit 1\nfi\n\nif [ ! -d $TOOLKIT_DIR/logs ]\nthen\n    mkdir $TOOLKIT_DIR/logs\nfi\n\n\"$TOOLKIT_DIR/CGAppCLPrepTool\" SdkPrep -in \"$CONFIGURATION_BUILD_DIR/$EXECUTABLE_FOLDER_PATH\" -out \"$CONFIGURATION_BUILD_DIR/$EXECUTABLE_NAME.mdx\" -storeURL \"${STOREURL}\" -appType \"${APPTYPE}\" -packageId \"${PACKAGEID}\" -entitlements \"$SRCROOT/$PROJECT/$PROJECT.entitlements\" -appIdPrefix \"${APPIDPREFIX}\" -minPlatform \"9.0\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		DEF898B6268BCC3C0040BB6F /* Sources */ = {
